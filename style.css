@@ -1,0 +1,5 @@
+:root{--bg:#07040b;--panel:#120a1c;--line:#2c1a45;--text:#f3eefc;--muted:#a596bf;--accent:#c4a0ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",system-ui,sans-serif;line-height:1.6}
+main{max-width:760px;margin:0 auto;padding:40px 16px 64px}a{color:var(--accent)}h1{margin:.2em 0}h2{margin-top:1.6em;font-size:1.1rem}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800}.brand img{width:40px;height:40px;border-radius:10px}
+.muted{color:var(--muted);font-size:.92rem}nav a{margin-right:14px}
