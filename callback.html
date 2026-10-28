@@ -1,0 +1,19 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Conectando… — Loami Digital</title><link rel="stylesheet" href="style.css"></head><body><main>
+<div class="brand"><img src="icon.png" alt="">Loami Digital</div>
+<p id="msg">Concluindo a conexão com o TikTok…</p>
+<script>
+// Retorno do Login Kit do TikTok. Repassa code/state para o painel local do titular,
+// que valida o state antes de trocar o código por um token. Nada é armazenado aqui.
+(function () {
+  var q = new URLSearchParams(location.search);
+  var allowed = new URLSearchParams();
+  ["code", "state", "error", "error_description", "scopes"].forEach(function (k) { if (q.has(k)) allowed.set(k, q.get(k)); });
+  var target = "http://localhost:8000/api/tiktok/oauth/callback?" + allowed.toString();
+  history.replaceState(null, "", location.pathname);
+  location.replace(target);
+  document.getElementById("msg").innerHTML = 'Se não for redirecionado, <a href="' + target.replace(/"/g, "&quot;") + '">clique aqui</a>.';
+})();
+</script>
+</main></body></html>
